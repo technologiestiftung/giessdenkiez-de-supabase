@@ -1,37 +1,15 @@
 ![](https://img.shields.io/badge/Built%20with%20%E2%9D%A4%EF%B8%8F-at%20Technologiestiftung%20Berlin-blue)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# {repo-template}
+# Giessdenkiez.de Supabase
 
 <!--
 
-How to:
-
-- You dont need to use every section. Only the ones that apply to your project.
-- Adjust the files on .github/ISSUE_TEMPLATE/* how you need them
-- Adjust the file on .github/CODEOWNERS to match your team
-- If you use staging and main branches use this template for .github/renovate.json
-
-
-```json
-{
-   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "@inpyjamas"
-  ],
-    "baseBranches": [
-    "staging"
-  ]
-}
-```
 
 Bonus:
 
@@ -51,17 +29,36 @@ Read more here https://allcontributors.org/
 Get fancy shields at https://shields.io
  -->
 
-Add your project description here
+Running the giessdenkiez.de stack on supabase. WIP please ignore.
 
 ## Prerequisites
 
+- Supabase account
+- Docker
+- Supabase CLI installed
+
 ## Installation
+
+- Clone this repo
+- install dependencies with `npm ci`
+- Login into supabase with `supabase login`
 
 ## Usage or Deployment
 
+- Create a project on supabase.com
+- Link your local project to the remote `supabase link --project-ref <YOUR PROJECT REF>` (will ask you for your database password from the creation process)
+- Push your local state to your remote project `supabase db push` (will ask you for your database password from the creation process)
+
 ## Development
 
+- Run `supabase start` to start the supabase stack
+- Run `supabase stop` to stop the supabase stack (all changes not included in a migration will be lost)
+- make changes to your db using sql and run `supabase db diff --file <MIGRATION FILE NAME> --schema public --use-migra` to create migrations
+- Run `supabase gen types typescript --local > ./scripts/db-types.ts` to generate typescript types for your db
+
 ## Tests
+
+- Run `npm test` to run the tests
 
 ## Contributing
 
@@ -70,6 +67,7 @@ Before you create a pull request, write an issue so we can discuss your changes.
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
