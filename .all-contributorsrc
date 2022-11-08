@@ -1,5 +1,5 @@
 {
-  "projectName": "template-default",
+  "projectName": "giessdenkiez-de-supabase",
   "projectOwner": "technologiestiftung",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -16,31 +16,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/315106?v=4",
       "profile": "https://fabianmoronzirfas.me/",
       "contributions": [
-        "doc"
-      ]
-    },
-    {
-      "login": "vogelino",
-      "name": "Lucas Vogel",
-      "avatar_url": "https://avatars.githubusercontent.com/u/2759340?v=4",
-      "profile": "http://vogelino.com",
-      "contributions": [
         "doc",
-        "ideas",
-        "review",
-        "code"
-      ]
-    },
-    {
-      "login": "Esshahn",
-      "name": "Ingo Hinterding",
-      "avatar_url": "https://avatars.githubusercontent.com/u/434355?v=4",
-      "profile": "http://www.awsm.de",
-      "contributions": [
-        "doc"
+        "code",
+        "infra"
       ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": true
+  "linkToUsage": true
 }
