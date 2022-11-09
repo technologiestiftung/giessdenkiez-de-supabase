@@ -9,15 +9,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/technologiestiftung/zms-supabase.git"
+		"url": "git+https://github.com/technologiestiftung/giessdenkiez-de-supabase.git"
 	},
 	"keywords": [],
 	"author": "ff6347 <hash@ff6347.email>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/technologiestiftung/zms-supabase/issues"
+		"url": "https://github.com/technologiestiftung/giessdenkiez-de-supabase/issues"
 	},
-	"homepage": "https://github.com/technologiestiftung/zms-supabase#readme",
+	"homepage": "https://github.com/technologiestiftung/giessdenkiez-de-supabase#readme",
 	"devDependencies": {
 		"@saithodev/semantic-release-backmerge": "2.1.2",
 		"@supabase/supabase-js": "2.0.5",
