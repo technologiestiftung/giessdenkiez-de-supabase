@@ -46,8 +46,41 @@ Running the giessdenkiez.de stack on supabase. WIP please ignore.
 ## Usage or Deployment
 
 - Create a project on supabase.com
-- Link your local project to the remote `supabase link --project-ref <YOUR PROJECT REF>` (will ask you for your database password from the creation process)
-- Push your local state to your remote project `supabase db push` (will ask you for your database password from the creation process)
+- Configure your GitHub actions to deploy all migrations to staging and production. See [.github/workflows/deploy-to-supabase-staging.yml](.github/workflows/deploy-to-supabase-staging.yml) and [.github/workflows/deploy-to-supabase-production.yml](.github/workflows/deploy-to-supabase-production.yml) for an example. We are using actions environments to deploy to different environments. You can read more about it here: https://docs.github.com/en/actions/reference/environments.
+  - Needed variables are:
+    - `DB_PASSWORD`
+    - `PROJECT_ID`
+    - `SUPABASE_ACCESS_TOKEN`
+- **(Not recommended but possible)** Link your local project directly to the remote `supabase link --project-ref <YOUR PROJECT REF>` (will ask you for your database password from the creation process)
+- **(Not recommended but possible)** Push your local state directly to your remote project `supabase db push` (will ask you for your database password from the creation process)
+
+### Radolan Harvester
+
+if you want to use the [DWD Radolan harvester](https://github.com/technologiestiftung/giessdenkiez-de-dwd-harvester) you need to prepare some data in your database
+
+- Update the table `radolan_harvester` with a time range for the last 30 days
+
+```sql
+INSERT INTO "public"."radolan_harvester" ("id", "collection_date", "start_date", "end_date")
+	VALUES (1, (
+			SELECT
+				CURRENT_DATE - INTEGER '1' AS yesterday_date),
+		(
+			SELECT
+				(
+					SELECT
+						CURRENT_DATE - INTEGER '31')::timestamp + '00:50:00'),
+				(
+					SELECT
+						(
+							SELECT
+								CURRENT_DATE - INTEGER '1')::timestamp + '23:50:00'));
+```
+
+- Update the table `radolan_geometry` with sql file [radolan_geometry.sql](sql/radolan_geometry.sql) This geometry is Berlin only.
+- Populate the table radolan_data with the content of [radolan_data.sql](sql/radolan_data.sql)
+
+This process is actually a little blackbox we need to solve.
 
 ## Development
 
@@ -134,3 +167,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 </table>
 
 ## Related Projects
+
+```
+
+```
