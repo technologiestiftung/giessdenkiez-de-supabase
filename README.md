@@ -8,6 +8,10 @@
 
 # Giessdenkiez.de Supabase
 
+## Deprecation Notice
+
+The content of this repository is deprecated and will be removed soon. Please use the new repository https://github.com/technologiestiftung/giessdenkiez-de-postgres-api instead.
+
 <!--
 
 
