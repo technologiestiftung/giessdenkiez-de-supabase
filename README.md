@@ -8,6 +8,9 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+This repo is deprecated and will be archived. All Supabase config for giessdenkiez.de is now located in the
+[giessdenkiez-de-postgres-api](https://github.com/technologiestiftung/giessdenkiez-de-postgres-api) repository.
+
 # Giessdenkiez.de Supabase
 
 <!--
